@@ -1,0 +1,97 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  relationMode = "prisma"
+  url      = env("DATABASE_URL")
+}
+
+enum Role{
+  ADMIN
+  USER
+}
+enum Status{
+  confirmed
+  annuler
+  en_attent
+}
+model User{
+  id Int @id @default(autoincrement())
+  name  String
+  family_name String
+  phone String 
+  email String @unique
+  password String 
+  createdAt DateTime @default(now())
+  role Role @default(USER)
+  age Int
+  sex String @default("Male")
+  appointments Appointment[]
+}
+model Settings {
+  id Int @id @default(autoincrement())
+  maxAppointmentPerDay Int
+  days DaySettings[]
+
+  @@index([id])
+}
+
+model DaySettings {
+  id Int @id @default(autoincrement())
+  dayOfWeek Int
+  openTime String
+  closeTime String
+  settingsId Int
+  settings Settings @relation(fields: [settingsId], references: [id])
+
+  @@index([settingsId])
+  @@index([dayOfWeek])
+}
+
+
+model ClosedDay{
+  id Int @id @default(autoincrement())
+  date DateTime 
+}
+model Appointment {
+  id        Int      @id @default(autoincrement())
+  date      DateTime
+  time      String
+  duration       Int @default(0)    // Duration in minutes
+  note      String  @default("douleur")
+  additinalNote String @default("")
+  status    Status    @default(en_attent)
+  user      User     @relation(fields: [userId], references: [id])
+  userId    Int
+  painLevel String  @default("")
+  createdAt DateTime @default(now())
+  isCancelled Boolean @default(false)
+  cancelNote String @default("")
+  type String @default("")
+
+  @@index([userId])
+}
+enum AppoinStatus{
+  on
+  off
+}
+model AppontmentStatus {
+  id Int @id 
+  status AppoinStatus @default(off) 
+}
+model Rating{
+  id        Int      @id @default(autoincrement())
+  rating     Int
+  email      String
+  comment    String
+  name       String
+  createdAt DateTime @default(now())
+}
