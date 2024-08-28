@@ -4,11 +4,12 @@ import {Modal, Button, ModalBody, ModalContent, ModalFooter, ModalHeader, Navbar
 import { AnimatePresence, motion } from "framer-motion";
 import { Image } from "@nextui-org/react";
 import styled from "styled-components";
-import Link from "next/link";
 import CustomButton from "@/app/components/Button.jsx";
 import { useLbNavbarLinks } from "@/app/lib/data"; 
 import { slideIn, prespective } from "../../lib/Animation";
 import { FaTelegram } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+import { IoLogoWhatsapp } from "react-icons/io";
 const NavItem = styled.div`
   perspective: 120px;
   perspective-origin: bottom;
@@ -18,7 +19,8 @@ function LbNavbar() {
   const links = useLbNavbarLinks();
   const [applyTransform, setApplyTransform] = useState(false);
   const [applyButton, setApplyButton] = useState(false);
-  const {isOpen, onOpen, onOpenChange} = useDisclosure();
+  const {isOpen: isContactOpen, onOpen: onContactOpen, onOpenChange: onContactOpenChange} = useDisclosure();
+  const {isOpen: isPricesOpen, onOpen: onPricesOpen, onOpenChange: onPricesOpenChange} = useDisclosure();
   useEffect(() => {
     const handleResize = () => {
       const shouldApply = window.innerWidth < 500;
@@ -36,7 +38,96 @@ function LbNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen} className="fixed h-24 max-[400px]:h-20">
+    <>
+     <Modal size="lg" isOpen={isContactOpen} onOpenChange={onContactOpenChange} isDismissable={false} isKeyboardDismissDisabled={true}>
+        <ModalContent>
+          {(onClose) => (
+            <>
+            <ModalHeader>
+              <p> 
+                إذا كنت بحاجة الى زرع أسنان 
+              </p>
+            </ModalHeader>
+              <ModalBody className=" text-end">
+                <p> 
+                  عيادة بن يحي تقدم لك
+                  مجموعة واسعة من الخدمات الصحية ، من تبييض الأسنان وتنظيفها، إلى تقويم الأسنان وزراعة الأسنان. 
+                </p>
+                <p>
+                احصل على استشارة مجانية وخصم 5% عند التواصل معنا اليوم!
+                </p>
+              </ModalBody>
+              <ModalBody>
+                <span className='cursor-pointer hover:text-word-purple flex flex-row items-center gap-1' onClick={()=>window.open("https://wa.me/79872346805", '_blank')} ><IoLogoWhatsapp className=" text-2xl"/> : +7 (987) 234 68 05 </span>
+                <span className='cursor-pointer hover:text-word-purple flex flex-row items-center gap-1' onClick={() => window.open('https://t.me/LBSTOMA01', '_blank')}><FaTelegram className=" text-2xl"/>: @LBSTOMA01</span> 
+                  <a href="mailto:lbstomatologia1@gmail.com" className=" hover:text-word-purple flex flex-row items-center gap-1"><MdEmail className=" text-2xl"/> : lbstomatologia1@gmail.com</a>
+              </ModalBody>
+              <ModalFooter>
+                <Button color="danger" variant="light" onPress={onClose}>
+                  Close
+                </Button>
+              </ModalFooter>
+            </>
+          )}
+        </ModalContent>
+      </Modal>
+      <Modal size="lg" isOpen={isPricesOpen} onOpenChange={onPricesOpenChange} isDismissable={false} isKeyboardDismissDisabled={true}>
+        <ModalContent>
+          {(onClose) => (
+            <>
+            <ModalHeader className="flex items-center justify-center font-bold text-2xl text-word-purple">
+              <h1 > 
+                ЛБ’s SPECIAL PRICES
+              </h1>
+            </ModalHeader>
+              <ModalBody className=" text-end">
+                <table>
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>OUR SERVICES</th>
+                      <th>PRICES</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>
+                        <Image
+                          src="https://img.icons8.com/?size=100&id=60688&format=png&color=000000"
+                          className='w-12 h-12 pointer-events-none'
+                          width={128}
+                          height={128}
+                          alt='external-orthodontic-dental-victoruler'
+                        />
+                      </th>
+                    </tr>
+                  </tbody>
+                </table>
+              </ModalBody>
+              <ModalBody>
+                <div className=" flex-flex-row">
+                  <span>WhatsApp: </span><span className='cursor-pointer hover:text-word-purple' onClick={()=>window.open("https://wa.me/79872346805", '_blank')} >+7 (987) 234 68 05 </span>
+                </div>
+                <div className=" flex-flex-row">
+                <FaTelegram />:<span className='cursor-pointer hover:text-word-purple' onClick={() => window.open('https://t.me/LBSTOMA01', '_blank')}> @LBSTOMA01</span> 
+                </div>
+                <div className="flex flex-row">
+                <MdEmail />:
+                  <a href="mailto:lbstomatologia1@gmail.com" className="text-blue-500 hover:underline">
+                    lbstomatologia1@gmail.com
+                  </a>
+                </div>
+              </ModalBody>
+              <ModalFooter>
+                <Button color="danger" variant="light" onPress={onClose}>
+                  Close
+                </Button>
+              </ModalFooter>
+            </>
+          )}
+        </ModalContent>
+      </Modal>
+      <Navbar onMenuOpenChange={setIsMenuOpen} className="fixed h-24 max-[400px]:h-20">
       <NavbarContent justify="start">
         <AnimatePresence>
           <NavbarMenuToggle
@@ -77,22 +168,25 @@ function LbNavbar() {
           </CustomButton>
         </NavbarItem>
       </NavbarContent>
-      <NavbarMenu className="flex flex-col gap-5 justify-start overflow-hidden pt-10 pl-10">
+      <NavbarMenu className="flex flex-col gap-10 cursor-pointer justify-start overflow-hidden pt-10 pl-10">
         {links.map((link, i) => (
           <NavItem key={i}>
             <motion.div variants={prespective(i)} animate="enter" initial="initial" exit="exit">
               <NavbarMenuItem>
                 {
-                  ( link.name)?(
-                    <div onClick={onOpen}
-                      
-                    className="text-[46px] font-semibold hover:text-word-purple"  passHref>
-                    {link.name}
-                  </div>
-                  ):
-                  <Link onClick={()=>{}} className="text-[46px] font-semibold hover:text-word-purple" href={link.hash} passHref>
-                    {link.name}
-                  </Link>
+                  ( link.name==="ЛБ’s SPECIAL PRICES")?(
+                    <div onClick={onPricesOpen}
+                      className="text-[46px] font-semibold hover:text-word-purple"  passHref
+                    >
+                      {link.name}
+                    </div>
+                  ):(
+                    <div onClick={onContactOpen}
+                      className="text-[46px] font-semibold hover:text-word-purple"  passHref
+                    >
+                      {link.name}
+                    </div>
+                  )
                 }
               </NavbarMenuItem>
             </motion.div>
@@ -123,49 +217,11 @@ function LbNavbar() {
           </NavItem>
         </div>
       </NavbarMenu>
-      <Modal size="lg" isOpen={isOpen} onOpenChange={onOpenChange} isDismissable={false} isKeyboardDismissDisabled={true}>
-        <ModalContent>
-          {(onClose) => (
-            <>
-            <ModalHeader>
-              <p> 
-                إذا كنت بحاجة الى زرع أسنان 
-              </p>
-            </ModalHeader>
-              <ModalBody className=" text-end">
-                <p> 
-                  عيادة بن يحي تقدم لك
-                  مجموعة واسعة من الخدمات الصحية ، من تبييض الأسنان وتنظيفها، إلى تقويم الأسنان وزراعة الأسنان. 
-                </p>
-                <p>
-                احصل على استشارة مجانية وخصم 5% عند التواصل معنا اليوم!
-                </p>
-              </ModalBody>
-              <ModalBody>
-                <div className=" flex-flex-row">
-                  <span>WhatsApp: </span><span className='cursor-pointer hover:text-word-purple' onClick={()=>window.open("https://wa.me/79872346805", '_blank')} >+7 (987) 234 68 05 </span>
-                </div>
-                <div className=" flex-flex-row">
-                <span>Telegram:</span><span className='cursor-pointer hover:text-word-purple' onClick={() => window.open('https://t.me/LBSTOMA01', '_blank')}> @LBSTOMA01</span> 
-                </div>
-                <div className="flex flex-row">
-                  📧:{" "}
-                  <a href="mailto:lbstomatologia1@gmail.com" className="text-blue-500 hover:underline">
-                    lbstomatologia1@gmail.com
-                  </a>
-                </div>
-              </ModalBody>
-              <ModalFooter>
-                <Button color="danger" variant="light" onPress={onClose}>
-                  Close
-                </Button>
-              </ModalFooter>
-            </>
-          )}
-        </ModalContent>
-      </Modal>
-    </Navbar>
+         </Navbar>
+    </>
+    
   );
+  
 }
 
 export default LbNavbar;

@@ -268,25 +268,12 @@ export const navList= [{
 
 export const useLbNavbarLinks = () => {  
     return [
+
       {
-        name: "Home",
-        hash: "/#accueil",
+        name: "ЛБ’s SPECIAL PRICES",
       },
       {
-        name: "Services",
-        hash: "/#services",
-      },
-      {
-        name: "Why Us?",
-        hash: "/#nous",
-      },
-      {
-        name: "Contact",
-        hash: "/#Contact",
-      },
-      {
-        name: "ЛБ",
-        hash: "/lb",
+        name: "Contact me now !",
       }
     ];
   };
