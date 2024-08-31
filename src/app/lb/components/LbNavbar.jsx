@@ -45,17 +45,22 @@ function LbNavbar() {
     onOpen: onPricesOpen,
     onOpenChange: onPricesOpenChange
   } = useDisclosure();
+  
+  const [imageSrc, setImageSrc] = useState('/lb/p2.jpg');
+  const [languageButton, setLanguageButton] = useState('AR');
 
-  const [language, setLanguage] = useState("english");
-  const [languageButton, setLanguageButton] = useState("arabic");
+  const handleImageChange = () => {
+      setImageSrc(prevSrc => prevSrc === '/lb/p2.jpg' ? '/lb/p1.jpg' : '/lb/p2.jpg');
+      setLanguageButton(prevLng => prevLng ==="AR"? "EN":"AR")
+  };
 
   const handleLanguageToggle = () => {
-    if (language === "english") {
-      setLanguage("arabic");
-      setLanguageButton("english");
+    if (language === "EN") {
+      setLanguage("AR");
+      setLanguageButton("EN");
     } else {
-      setLanguage("english");
-      setLanguageButton("arabic");
+      setLanguage("EN");
+      setLanguageButton("AR");
     }
   };
 
@@ -87,15 +92,19 @@ function LbNavbar() {
         <ModalContent>
           {(onClose) => (
             <>
-              <ModalHeader>
-                <p>إذا كنت بحاجة الى زرع أسنان</p>
+              <ModalHeader className=" flex items-center justify-center">
+                <h1 className=" text-3xl text-word-purple">َسلامة جسمك تبدأ من فَمك</h1>
               </ModalHeader>
               <ModalBody className="text-end">
                 <p>
-                  عيادة بن يحي تقدم لك مجموعة واسعة من الخدمات الصحية ، من
-                  تبييض الأسنان وتنظيفها، إلى تقويم الأسنان وزراعة الأسنان.
+                عيادة بن يحي تُقدم لك عدد كبير من الحلول العلاجية
                 </p>
-                <p>احصل على استشارة مجانية وخصم 5% عند التواصل معنا اليوم!</p>
+                <p>
+                ( و تقدم لك ايضاً استشارة مجانية ) في مجال زراعة الاسنان
+                </p>
+                <p>
+                ❗و خصم  ٪٥اذا تواصلت معنا اليوم 
+                </p>
               </ModalBody>
               <ModalBody>
                 <span
@@ -135,53 +144,28 @@ function LbNavbar() {
         isKeyboardDismissDisabled={true}
       >
         <ModalContent>
-          {(onClose) => (
-            <>
-          <ModalBody className="text-center flex flex-col  items-center gap-4 max-h-[600px] overflow-y-auto">
-  {language === "english" ? (
-    <Image
-      src="/lb/p1.jpg"
-      width={400}
-      height={600}
-      alt="invitation for dental students"
-      quality={90}
-      className="pointer-events-none"
-    />
-  ) : (
-    <div className="flex flex-col gap-4">
-      <Image
-        src="/lb/p2.jpg"
-        width={400}
-        height={600}
-        alt="Arabic version image 1"
-        quality={90}
-        className="pointer-events-none"
-      />
-      <Image
-        src="/lb/p3.png"
-        width={400}
-        height={600}
-        alt="Arabic version image 2"
-        quality={90}
-        className="pointer-events-none"
-      />
-    </div>
-  )}
-</ModalBody>
-
+        {(onClose) => (
+          <>
+              <ModalHeader className="flex flex-col gap-1"></ModalHeader>
+              <ModalBody  className=" flex justify-center items-center">
+                  <Image
+                      src={imageSrc}
+                      width={400}
+                      height={600}
+                      alt='invitation for dental students'
+                      quality={90}
+                      className=' pointer-events-none'
+                  />
+              </ModalBody>
               <ModalFooter>
-                <Button color="danger" variant="shadow" onPress={onClose}>
-                  Close
-                </Button>
-                <Button
-                  variant="shadow"
-                  className="bg-light-purple text-white"
-                  onPress={handleLanguageToggle}
-                >
-                  Show {languageButton} Version
-                </Button>
+                  <Button color="danger" variant="shadow" onPress={onClose}>
+                      Close
+                  </Button>
+                  <Button variant='shadow' className="bg-light-purple text-white" onPress={handleImageChange}>
+                      {languageButton} Version
+                  </Button>
               </ModalFooter>
-            </>
+          </>
           )}
         </ModalContent>
       </Modal>

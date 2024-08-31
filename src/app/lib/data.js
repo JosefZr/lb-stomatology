@@ -273,7 +273,7 @@ export const useLbNavbarLinks = () => {
         name: "ЛБ’s SPECIAL PRICES",
       },
       {
-        name: "Contact me now !",
+        name: "Contact me Now !",
       }
     ];
   };
