@@ -99,10 +99,11 @@ function LbNavbar() {
                 <p>
                 عيادة بن يحي تُقدم لك عدد كبير من الحلول العلاجية
                 </p>
-                <p>
-                ( و تقدم لك ايضاً استشارة مجانية ) في مجال زراعة الاسنان
-                </p>
-                <p>
+                <div className=" flex flex-row-reverse items-center justify-start gap-1">
+                <p>( و تقدم لك ايضاً استشارة مجانية ) </p>
+                <p> في مجال زراعة الاسنان </p>
+                </div>
+                <p className=" text-word-purple">
                 ❗و خصم  ٪٥اذا تواصلت معنا اليوم 
                 </p>
               </ModalBody>
