@@ -10,7 +10,7 @@ export default function HorizontalScroll() {
         <h1>Get in touch with us Now! - Don’t miss out your opportunity - <span className='underline'><Link href="mailto:lbstomatologia1@gmail.com" size="sm" isExternal > lbstomatologia1@gmail.com </Link></span>
         </h1>
         <h1>
-        <span className='underline'><Link href="mailto:dristomatologia@gmail.com" size="sm" isExternal > dristomatologia@gmail.com </Link></span> - <span className='underline'><Link href="mailto:drrstomatologia@gmail.com" size="sm" isExternal > drrstomatologia@gmail.com </Link></span>
+{/*         <span className='underline'><Link href="mailto:dristomatologia@gmail.com" size="sm" isExternal > dristomatologia@gmail.com </Link></span> - <span className='underline'><Link href="mailto:drrstomatologia@gmail.com" size="sm" isExternal > drrstomatologia@gmail.com </Link></span> */}
           <span className=' text-word-purple'> • EN Service : </span>
           <span 
             className='cursor-pointer' 
@@ -26,12 +26,13 @@ export default function HorizontalScroll() {
           <span 
             className='cursor-pointer' 
             onClick={() => window.open('https://t.me/DrSenBI', '_blank')}
-          > @DrSenBI</span> -
+          > @DrSenBI</span> 
+{/*           -
           <span 
             className='cursor-pointer' 
             onClick={() => window.open('https://t.me/Drrstoma', '_blank')}
           > @Drrstoma
-          </span>
+          </span> */}
         </h1>
       </div>
       <div className="logos-slide">
@@ -40,7 +41,7 @@ export default function HorizontalScroll() {
         </h1>
         
         <h1>
-        <span className='underline'><Link href="mailto:dristomatologia@gmail.com" size="sm" isExternal > dristomatologia@gmail.com </Link></span> - <span className='underline'><Link href="mailto:drrstomatologia@gmail.com" size="sm" isExternal > drrstomatologia@gmail.com </Link></span>
+{/*         <span className='underline'><Link href="mailto:dristomatologia@gmail.com" size="sm" isExternal > dristomatologia@gmail.com </Link></span> - <span className='underline'><Link href="mailto:drrstomatologia@gmail.com" size="sm" isExternal > drrstomatologia@gmail.com </Link></span> */}
           <span className=' text-word-purple'> • EN Service : </span>
           <span 
             className='cursor-pointer' 
@@ -55,12 +56,13 @@ export default function HorizontalScroll() {
           <span 
             className='cursor-pointer' 
             onClick={() => window.open('https://t.me/DrSenBI', '_blank')}
-          > @DrSenBI</span> -
+          > @DrSenBI</span> 
+{/*           -
           <span 
             className='cursor-pointer' 
             onClick={() => window.open('https://t.me/Drrstoma', '_blank')}
           > @Drrstoma
-          </span>
+          </span> */}
         </h1>
       </div>
     </div>
