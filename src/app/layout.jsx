@@ -13,7 +13,7 @@ export default async function RootLayout({ children }) {
         <link rel="icon" href="./favicon.ico" />
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="Bienvenue sur le site de Light Stomatology. Nous offrons des soins dentaires complets et de qualité pour toute la famille. Découvrez nos services, prenez rendez-vous en ligne, et restez informé des dernières actualités dentaires." />
+        <meta name="description" content=" •Dental Implant Surgery Doesn't Have to Be Scary• You're not just a number to us. Our 30 years of experience are dedicated to ensuring every patient  feels cared for and achieves the best results." />
       </head>
       <body className={`${nunitoSans.className} relative h-fit`} suppressHydrationWarning={true}>
       
