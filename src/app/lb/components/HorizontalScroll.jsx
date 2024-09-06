@@ -25,8 +25,8 @@ export default function HorizontalScroll() {
           <span className=' text-word-purple'> • FR Service : </span>
           <span 
             className='cursor-pointer' 
-            onClick={() => window.open('https://t.me/DrSenBI', '_blank')}
-          > @DrSenBI</span> 
+            onClick={() => window.open('https://t.me/LBSTOMA001', '_blank')}
+          > @LBSTOMA001</span> 
 {/*           -
           <span 
             className='cursor-pointer' 
