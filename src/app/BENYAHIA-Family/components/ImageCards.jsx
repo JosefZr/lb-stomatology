@@ -5,7 +5,7 @@ export default function ImageCards({image1,image2, style, text}) {
     return (
         /* From Uiverse.io by eslam-hany */ 
         <div className={` flex flex-col items-between  w-min items-center  ${style}`}>
-            <div className="book max-[680px]:max-w-fit w-fit mx-auto">
+            <div className="book max-[830px]:max-w-fit w-fit mx-auto">
                 <Image
                     src={image1}
                     width={300}
@@ -13,7 +13,7 @@ export default function ImageCards({image1,image2, style, text}) {
                     className=' w-auto max-w-fit'
                     alt="Benyahia Mostapha"
                     />
-                <div className="cover max-[680px]:max-w-fit w-auto" >
+                <div className="cover max-[830px]:max-w-fit w-auto" >
                     <Image
                     src={image2}
                     width={300}

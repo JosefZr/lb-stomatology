@@ -2,7 +2,7 @@ import ImageCards from "./components/ImageCards";
 
 export default function BENYAHIAFamily() {
     return (
-        <div className="flex flex-row max-[680px]:flex-col max-[680px]:gap-28 justify-center max-[680px]:items-center gap-14 max-w-4xl mx-auto pt-20 pb-28">
+        <div className="flex flex-row max-[830px]:flex-col max-[830px]:gap-28 justify-center max-[830px]:items-center gap-14 max-w-4xl mx-auto pt-20 pb-28">
             <ImageCards 
                 image1={"/family/mus2.jpg"} 
                 image2={"/family/mus1.jpg"} 
