@@ -17,7 +17,7 @@ export default function BENYAHIAFamily() {
             <ImageCards  
                 image1={"/family/lotfi2.jpg"} 
                 image2={"/family/lotfi1.jpg"}  
-                style=" gap-48"
+                style=" gap-60"
                 text={(
                     <>
                         L.BENYAHIA (H-V-M)
