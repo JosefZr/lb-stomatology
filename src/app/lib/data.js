@@ -274,6 +274,12 @@ export const useLbNavbarLinks = () => {
       },
       {
         name: "Contact me Now !",
+      },
+      {
+        name:"BENYAHIA Family"
+      },
+      {
+        name:"Locations 📍"
       }
     ];
   };

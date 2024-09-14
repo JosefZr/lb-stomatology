@@ -71,7 +71,7 @@ function HeroLb() {
 
                   className=" rounded-2xl bg-black text-[#F3EEF3] font-semibold"
                 >
-                  Make an Appointment
+                  Get your treatment plan now !
                 </CustomButton>
             </div>
           </div>

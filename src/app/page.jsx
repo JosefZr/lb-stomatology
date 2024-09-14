@@ -9,6 +9,7 @@ import Convincing from "./lb/components/Convincing";
 import InfiniteScroll from "./lb/components/InfiniteScroll";
 import HorizontalScroll from "./lb/components/HorizontalScroll";
 import Visitors from "./lb/components/Visitors"
+import Arabic from "./components/Arabic";
 
 export default function Lb() {
   const [loading, setLoading] = useState(true);
@@ -39,6 +40,7 @@ export default function Lb() {
           <Visitors/>
           <Features />
           <Convincing />
+          <Arabic/>
           <InfiniteScroll />
           <HorizontalScroll />
         </div>

@@ -20,7 +20,7 @@ export default function InfiniteScroll() {
     useReveal("vertical")
     return (
         <>
-        <div className='relative mx-auto flex gap-4 flex-col text-center place-content-center xl:max-w-[1200px] max-[500px]:px-2 pb-20'>
+        <div className='relative mx-auto flex gap-4 flex-col text-center place-content-center xl:max-w-[1200px] max-[500px]:px-2 pt-20 pb-20'>
             <div className=' flex flex-col gap-5'>
                 <h1 className='reveal-vertical text-5xl font-bold uppercase max-[400px]:text-3xl max-xs:text-xl'>Want to Be a High-value Dentist !?</h1>
                 <h2 className='reveal-vertical text-4xl font-semibold uppercase max-[400px]:text-2xl max-xs:text-lg'>Then commit to lifelong learning..</h2>

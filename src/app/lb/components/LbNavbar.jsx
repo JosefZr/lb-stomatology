@@ -25,6 +25,9 @@ import { slideIn, prespective } from "../../lib/Animation";
 import { FaTelegram } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { IoLogoWhatsapp } from "react-icons/io";
+import { redirect } from "next/navigation";
+import CustomNavItem from "./CustomNavItem";
+import Link from "next/link";
 
 const NavItem = styled.div`
   perspective: 120px;
@@ -86,7 +89,7 @@ function LbNavbar() {
         size="lg"
         isOpen={isContactOpen}
         onOpenChange={onContactOpenChange}
-        isDismissable={false}
+        isDismissable={true}
         isKeyboardDismissDisabled={true}
       >
         <ModalContent>
@@ -141,7 +144,7 @@ function LbNavbar() {
         size="lg"
         isOpen={isPricesOpen}
         onOpenChange={onPricesOpenChange}
-        isDismissable={false}
+        isDismissable={true}
         isKeyboardDismissDisabled={true}
       >
         <ModalContent>
@@ -207,7 +210,7 @@ function LbNavbar() {
               icon={applyButton && <FaTelegram size={24} />}
               className="font-semibold bg-black text-gray-100 min-w-0"
             >
-              {applyButton ? "" : "Join ЛБ-Dental Family!"}
+              {applyButton ? "" : "Make an Appointment"}
             </CustomButton>
           </NavbarItem>
         </NavbarContent>
@@ -222,14 +225,16 @@ function LbNavbar() {
               >
                 <NavbarMenuItem>
                   {link.name === "ЛБ’s SPECIAL PRICES" ? (
-                    <div
-                      onClick={onPricesOpen}
+                    <CustomNavItem onClick={onPricesOpen} name={link.name}/>
+                  ) : (link.name ==="Contact me Now !") ? (
+                    <CustomNavItem onClick={onContactOpen} name={link.name}/>
+                  ): (link.name=== "BENYAHIA Family") ?(
+                    <Link 
+                      href={"/BENYAHIA-Family"}
                       className="text-[46px] max-[540px]:text-[32px] font-semibold hover:text-word-purple"
                       passHref
-                    >
-                      {link.name}
-                    </div>
-                  ) : (
+                      >{link.name}</Link>
+                  ):(
                     <div
                       onClick={onContactOpen}
                       className="text-[46px] max-[540px]:text-[32px] font-semibold hover:text-word-purple"
