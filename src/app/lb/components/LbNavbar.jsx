@@ -160,10 +160,11 @@ function LbNavbar() {
                 <div>
                   <p>• Bordj Bou Arreridj *2</p>
                   <p>• ⁠Soon we will be available in   Algiers .</p>
+                  <br />
                   <p>Ps: Our Prices will be the Same anywhere ! </p>
+                  <br /> <br />
                   <p className=" text-word-purple">ЛБ-STOMATOLOGY is built on solid principles.</p>
                 </div>
-               
               </ModalBody>
               <ModalFooter>
                 <Button color="danger" variant="light" onPress={onClose}>

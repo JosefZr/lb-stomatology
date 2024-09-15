@@ -11,7 +11,7 @@ export default function BENYAHIAFamily() {
                 style=" gap-5  "
                 text={(
                     <>
-                    Dr.M.BENYAHIA <br/>
+                    <span className=" font-bold">Dr.M.BENYAHIA</span><br/>
                     With over 30 years in the field, he's constantly updating his dental knowledge to provide you with a unique experience !"    
                     </>
                 )}
@@ -23,7 +23,7 @@ export default function BENYAHIAFamily() {
                 style=" gap-5"
                 text={(
                     <>
-                        L.BENYAHIA (H-V-M)
+                        <span className=" font-bold">L.BENYAHIA</span>(H-V-M)
                         <br />
                         • Studying at Kazan State Medical University.
                         <br />
