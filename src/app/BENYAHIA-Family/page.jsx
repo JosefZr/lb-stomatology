@@ -27,20 +27,19 @@ export default function BENYAHIAFamily() {
                         <br />
                         • Studying at Kazan State Medical University.
                         <br />
-                        • The leader of ( 
+                        • The leader of  <br />
                             <span 
                                 className='hover:text-word-purple cursor-pointer' 
                                 onClick={() => window.open('https://t.me/lbstoma1', '_blank')}
-                            > ЛБ-STOMATOLOGY 🦷</span>  - 
+                            > •ЛБ-STOMATOLOGY 🦷.</span><br /> 
                             <span 
                                 className='hover:text-word-purple cursor-pointer' 
                                 onClick={() => window.open(' https://forms.gle/XPuytR27ih2P96Su7 ', '_blank')}
-                            > ЛБ’s Generations 🌍</span> - 
+                            > •ЛБ’s Generations 🌍.</span><br />
                             <span 
                                 className='hover:text-word-purple cursor-pointer' 
                                 onClick={() => window.open(' https://forms.gle/TxhJ66vKRvBA6ywC9', '_blank')}
-                            > ⁠ЛБ-THE MAN ⚡</span>  
-                        )
+                            > • ⁠ЛБ-THE MAN .</span>  
                     </>
                 )}
             />

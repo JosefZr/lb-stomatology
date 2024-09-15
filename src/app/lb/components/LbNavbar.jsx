@@ -26,6 +26,7 @@ import { FaTelegram } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { IoLogoWhatsapp } from "react-icons/io";
 import CustomNavItem from "./CustomNavItem";
+import { Ri24HoursLine } from "react-icons/ri";
 import Link from "next/link";
 
 const NavItem = styled.div`
@@ -209,7 +210,7 @@ function LbNavbar() {
         </ModalContent>
       </Modal>
 
-      <Navbar onMenuOpenChange={setIsMenuOpen} className="fixed h-24 max-[400px]:h-20">
+      <Navbar onMenuOpenChange={setIsMenuOpen} className="fixed h-24 max-[400px]:h-20 ">
         <NavbarContent justify="start">
           <AnimatePresence>
             <NavbarMenuToggle
@@ -242,46 +243,57 @@ function LbNavbar() {
               passHref
               variant="shadow"
               onPress={() => window.open("https://wa.me/79872346805", " _blank")}
-              icon={applyButton && <FaTelegram size={24} />}
-              className="font-semibold bg-black text-gray-100 min-w-0"
+              icon={applyButton && <Ri24HoursLine size={24} />}
+              className="font-semibold bg-black text-gray-100 min-w-0 "
             >
               {applyButton ? "" : "Make an Appointment"}
             </CustomButton>
           </NavbarItem>
         </NavbarContent>
-        <NavbarMenu className="flex flex-col gap-10 cursor-pointer justify-start overflow-hidden pt-10 pl-10">
-          {links.map((link, i) => (
-            <NavItem key={i}>
-              <motion.div
-                variants={prespective(i)}
-                animate="enter"
-                initial="initial"
-                exit="exit"
-              >
-                <NavbarMenuItem>
-                  {link.name === "ЛБ’s SPECIAL PRICES" ? (
-                    <CustomNavItem onClick={onPricesOpen} name={link.name}/>
-                  ) : (link.name ==="Contact me Now !") ? (
-                    <CustomNavItem onClick={onContactOpen} name={link.name}/>
-                  ): (link.name=== "BENYAHIA Family") ?(
-                    <Link 
-                      href={"/BENYAHIA-Family"}
-                      className="text-[46px] max-[540px]:text-[32px] font-semibold hover:text-word-purple"
-                      passHref
-                      >{link.name}</Link>
-                  ):(
-                    <div
-                      onClick={onLocationOpen}
-                      className="text-[46px] max-[540px]:text-[32px] font-semibold hover:text-word-purple"
-                      passHref
-                    >
-                      {link.name}
-                    </div>
-                  )}
-                </NavbarMenuItem>
-              </motion.div>
-            </NavItem>
-          ))}
+        <NavbarMenu className="flex flex-col gap-10 cursor-pointer justify-start items-center overflow-hidden pt-10 pl-10 bg-white">
+{links.map((link, i) => (
+  <NavItem key={i}>
+    {/* <motion.div
+      variants={prespective(i)}
+      animate="enter"
+      initial="initial"
+      exit="exit"
+    > */}
+      <NavbarMenuItem>
+        {link.name === "ЛБ’s SPECIAL PRICES" ? (
+          <CustomNavItem onClick={onPricesOpen} name={link.name}/>
+        ) : link.name === "Contact me Now !" ? (
+          <CustomNavItem onClick={onContactOpen} name={link.name}/>
+        ) : link.name === "BENYAHIA Family" ? (
+          <Link 
+            href={"/BENYAHIA-Family"}
+            className="text-[46px] max-[540px]:text-[32px] font-semibold hover:text-word-purple"
+            passHref
+          >
+            {link.name}
+          </Link>
+        ) : link.name === "Locations 📍" ? (
+          <div
+            onClick={onLocationOpen}
+            className="text-[46px] max-[540px]:text-[32px] font-semibold hover:text-word-purple"
+            passHref
+          >
+            {link.name}
+          </div>
+        ) : (
+          // Correctly rendering the image in this case
+          <Image
+            src="/purple.jpg"
+            alt="office"
+            width={300}
+            height={400}
+            className="rounded-md"
+          />
+        )}
+      </NavbarMenuItem>
+    {/* </motion.div> */}
+  </NavItem>
+))}
         </NavbarMenu>
       </Navbar>
     </>
