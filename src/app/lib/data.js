@@ -273,14 +273,14 @@ export const useLbNavbarLinks = () => {
         name: "ЛБ’s SPECIAL PRICES",
       },
       {
-        name: "Contact me Now !",
-      },
-      {
         name:"BENYAHIA Family"
       },
       {
         name:"Locations 📍"
-      }
+      },
+      {
+        name: "Contact me Now !",
+      },
     ];
   };
 

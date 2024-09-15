@@ -60,7 +60,7 @@ function HeroLb() {
                   className='hero-horizontal-left rounded-xl object-cover shadow-xl pointer-events-none'
                 />
               </div>
-          <div className='flex flex-col items-start max-md:items-center gap-4 mb-4'>
+          <div className='flex flex-col items-start justify-center max-md:items-center gap-4 mb-4 '>
             <h1 className='hero-vertical text-center text-3xl min-[300px]:text-5xl sm:text-5xl lg:text-6xl font-bold md:text-left capitalize text-bold-purple'>Do You really need an Implant?</h1>
             <h2 className='hero-vertical text-center min-[300px]:text-3xl sm:text-4xl lg:text-3xl font-bold md:text-left capitalize text-light-purple'>If not we won’t place one.</h2>
             <p className='hero-horizontal-right max-w-md max-sm:text-center md:text-left text-center xl:max-w-2xl lg:max-w-xl md:max-w-md text-xl dark:text-gray-50'>We’re here to <span className='text-word-purple'>help you</span> make the right decision that’s best for you.</p>

@@ -21,11 +21,10 @@ import { AnimatePresence, motion } from "framer-motion";
 import styled from "styled-components";
 import CustomButton from "@/app/components/Button.jsx";
 import { useLbNavbarLinks } from "@/app/lib/data";
-import { slideIn, prespective } from "../../lib/Animation";
+import { prespective } from "../../lib/Animation";
 import { FaTelegram } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { IoLogoWhatsapp } from "react-icons/io";
-import { redirect } from "next/navigation";
 import CustomNavItem from "./CustomNavItem";
 import Link from "next/link";
 
@@ -47,6 +46,11 @@ function LbNavbar() {
     isOpen: isPricesOpen,
     onOpen: onPricesOpen,
     onOpenChange: onPricesOpenChange
+  } = useDisclosure();
+  const {
+    isOpen: isLocationOpen,
+    onOpen: onLocationOpen,
+    onOpenChange: onLocationOpenChange
   } = useDisclosure();
   
   const [imageSrc, setImageSrc] = useState('/lb/p2.jpg');
@@ -139,7 +143,37 @@ function LbNavbar() {
           )}
         </ModalContent>
       </Modal>
-
+      <Modal
+        size="lg"
+        isOpen={isLocationOpen}
+        onOpenChange={onLocationOpenChange}
+        isDismissable={true}
+        isKeyboardDismissDisabled={true}
+      >
+        <ModalContent>
+          {(onClose) => (
+            <>
+              <ModalHeader className=" flex items-center justify-center">
+                <h1 className=" text-3xl text-word-purple">Locations</h1>
+              </ModalHeader>
+              <ModalBody className=" max-sm:flex-col gap-5">
+                <div>
+                  <p>• Bordj Bou Arreridj *2</p>
+                  <p>• ⁠Soon we will be available in   Algiers .</p>
+                  <p>Ps: Our Prices will be the Same anywhere ! </p>
+                  <p className=" text-word-purple">ЛБ-STOMATOLOGY is built on solid principles.</p>
+                </div>
+               
+              </ModalBody>
+              <ModalFooter>
+                <Button color="danger" variant="light" onPress={onClose}>
+                  Close
+                </Button>
+              </ModalFooter>
+            </>
+          )}
+        </ModalContent>
+      </Modal>
       <Modal
         size="lg"
         isOpen={isPricesOpen}
@@ -206,7 +240,7 @@ function LbNavbar() {
             <CustomButton
               passHref
               variant="shadow"
-              onPress={() => window.open("https://t.me/lbstoma1", " _blank")}
+              onPress={() => window.open("https://wa.me/79872346805", " _blank")}
               icon={applyButton && <FaTelegram size={24} />}
               className="font-semibold bg-black text-gray-100 min-w-0"
             >
@@ -236,7 +270,7 @@ function LbNavbar() {
                       >{link.name}</Link>
                   ):(
                     <div
-                      onClick={onContactOpen}
+                      onClick={onLocationOpen}
                       className="text-[46px] max-[540px]:text-[32px] font-semibold hover:text-word-purple"
                       passHref
                     >

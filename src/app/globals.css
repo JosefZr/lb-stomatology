@@ -400,6 +400,7 @@ body {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  flex-direction: column;
   color: #000;
 }
 
@@ -440,4 +441,11 @@ body {
 .book .cover p , .book .p {
   font-size: 20px;
   font-weight: bolder;
+}
+.back {
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+  
 }
