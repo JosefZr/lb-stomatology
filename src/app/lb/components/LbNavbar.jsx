@@ -21,7 +21,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import styled from "styled-components";
 import CustomButton from "@/app/components/Button.jsx";
 import { useLbNavbarLinks } from "@/app/lib/data";
-import { prespective } from "../../lib/Animation";
 import { FaTelegram } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { IoLogoWhatsapp } from "react-icons/io";
@@ -53,7 +52,7 @@ function LbNavbar() {
     onOpen: onLocationOpen,
     onOpenChange: onLocationOpenChange
   } = useDisclosure();
-  
+
   const [imageSrc, setImageSrc] = useState('/lb/p2.jpg');
   const [languageButton, setLanguageButton] = useState('AR');
 
