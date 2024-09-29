@@ -22,24 +22,44 @@ function Convincing() {
             ref={ref}
             style={{ scale: scaleProgress, opacity: opacityProgress }}
         >
-            <section className='bg-transparent flex xl:flex-row-reverse flex-col justify-center gap-5 max-sm:mx-0 mx-auto md:px-10 md:py-10 pb-10 max-sm:px-5 max-[400px]:px-2 items-start max-xl:items-center rounded-xl'>
-                <div className='flex items-center flex-col gap-10'>
+            <section className='bg-transparent flex xl:flex-row-reverse flex-col justify-evenly gap-5 max-sm:mx-0 mx-auto md:px-10 md:py-10 pb-10 max-sm:px-5 max-[400px]:px-2 items-start max-xl:items-center rounded-xl'>
+                <div className='flex items-center flex-col gap-10 max-[375px]:gap-5'>
                     <h1 className='reveal-vertical xl:hidden capitalize font-bold sm:text-7xl text-5xl whitespace-normal max-[400px]:text-3xl'>
                         Dental implants are not only an <span className='text-word-purple'>Aesthetic</span> Procedure But also a <span className='text-word-purple'>Healthy</span> One
                     </h1>
-                        <Image  
-                            src={image}
-                            alt='cabin'
-                            width={500}
-                            height={500}
-                            quality={90}
-                            style={{ height: 'auto' }}
-                            className='reveal-horizontal-left rounded-xl pointer-events-none'
-                        />
+                    <div class="flip-card max-sm:h-72 max-sm:w-[400px] sm:w-[500px] max-[375px]:w-64 max-[375px]:h-48 ">
+                        <div class="flip-card-inner max-sm:h-72 max-sm:w-[400px] sm:w-[500px] max-[375px]:w-64 max-[375px]:h-48">
+                            <div class="flip-card-front max-sm:h-72 max-sm:w-[400px] sm:w-[500px] max-[375px]:w-64 max-[375px]:h-48">
+                            <Image
+                                src="/flip.jpg"
+                                alt='White and Black Simple Illustration Dental Clinic Logo'
+                                width={500}
+                                height={300}
+                                quality={90}
+                                priority
+                                className='hero-horizontal-left rounded-xl object-cover shadow-xl pointer-events-none'
+                            />
+                            </div>
+                            <div class="flip-card-back max-sm:h-72 max-sm:w-[400px]  sm:w-[500px] max-[375px]:w-64 max-[375px]:h-48">
+                            <Image
+                                src="/flip2.jpg"
+                                alt='White and Black Simple Illustration Dental Clinic Logo'
+                                width={500}
+                                height={300}
+                                quality={90}
+                                priority
+                                className='hero-horizontal-left rounded-xl object-cover shadow-xl pointer-events-none'
+                            />
+                            </div>
+                        </div>
                     </div>
-                <div className='flex flex-col max-xl:text-center text-start gap-5 max-xl:w-full w-[50%] pt-5'   >
-                    <h1 className=' reveal-horizontal-right max-xl:hidden relative capitalize font-bold max-sm:text-3xl text-5xl whitespace-normal '>Dental implants are not only an <span className='text-word-purple'>Aesthetic</span> Procedure But also a <span className='text-word-purple'>Healthy</span> One</h1>
+                    </div>
+                <div className='flex flex-col max-xl:text-center text-start gap-7 max-xl:w-full w-[50%] pt-5'   >
+                    <h1 className=' reveal-horizontal-right max-xl:hidden relative capitalize font-bold max-sm:text-3xl text-5xl whitespace-normal '>They Are Not Only An  <span className='text-word-purple'>Aesthetic</span> Procedure But also a <span className='text-word-purple'>Healthy</span> One</h1>
                     <h2 className='reveal-horizontal-right text-center xl:text-left max-sm:text-3xl sm:text-5xl  font-bold capitalize'>They prevent Bone Loss</h2>
+                    <h3 className='reveal-vertical text-5xl xl:text-left max-sm:text-3xl sm:text-5xl font-bold'>
+                        But ...
+                    </h3>
                 </div>
             </section>
         </motion.div>

@@ -4,7 +4,7 @@ import { AnimatePresence } from "framer-motion";
 import HeroLb from "./lb/components/HeroLb";
 import LbNavbar from "./lb/components/LbNavbar";
 import LbLoader from "./lb/components/LbLoader";
-import Features from "./lb/components/Features";
+// import Features from "./lb/components/Features";
 import Convincing from "./lb/components/Convincing";
 import InfiniteScroll from "./lb/components/InfiniteScroll";
 import HorizontalScroll from "./lb/components/HorizontalScroll";
@@ -39,12 +39,11 @@ export default function Lb() {
           <LbNavbar />
           <HeroLb />
           <Visitors/>
-          <Features />
           <Convincing />
           <Arabic/>
-          <InfiniteScroll />
-          <Form/>
-          <HorizontalScroll />
+          {/* <InfiniteScroll /> */}
+          {/* <Form/> */}
+          {/* <HorizontalScroll /> */}
         </div>
       )}
     </AnimatePresence>

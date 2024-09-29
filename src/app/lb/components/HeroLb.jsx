@@ -2,7 +2,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
-import CustomButton from '../../components/Button';
 import useReveal from '@/hooks/useReveal';
 
 function HeroLb() {
@@ -33,10 +32,10 @@ function HeroLb() {
   }, []);
   useReveal("vertical");
   useReveal("horizontal");
-  const handleWhatsAppPress = () => {
-    const whatsappUrl = "https://wa.me/79872346805"; // Replace with the actual WhatsApp number
-    window.open(whatsappUrl, '_blank');
-  };
+  // const handleWhatsAppPress = () => {
+  //   const whatsappUrl = "https://wa.me/79872346805"; // Replace with the actual WhatsApp number
+  //   window.open(whatsappUrl, '_blank');
+  // };
   return (
     <motion.section
       style={applyTransform ? { opacity } : {}}
@@ -48,32 +47,45 @@ function HeroLb() {
         className={`fixed ${height ? 'relative' : 'max-md:relative'}`}
         style={applyTransform ? { scale } : { position: 'relative' }}
       >
-        <div className='flex items-center justify-between flex-row gap-5 max-md:flex-col xl:max-w-6xl max-[500px]:mx-1 mx-10 sm:mt-28 max-sm:mt-28'>
-          <div className='flex items-center justify-center'>
-                <Image
-                  src="/purple2.jpg"
-                  alt='White and Black Simple Illustration Dental Clinic Logo'
-                  width={400}
-                  height={700}
-                  quality={90}
-                  priority
-                  className='hero-horizontal-left rounded-xl object-cover shadow-xl pointer-events-none'
-                />
-              </div>
-          <div className='flex flex-col items-start justify-center max-md:items-center gap-4 mb-4 '>
-            <h1 className='hero-vertical text-center text-3xl min-[300px]:text-5xl sm:text-5xl lg:text-6xl font-bold md:text-left capitalize text-bold-purple'>Do You really need an Implant?</h1>
-            <h2 className='hero-vertical text-center min-[300px]:text-3xl sm:text-4xl lg:text-3xl font-bold md:text-left capitalize text-light-purple'>If not we won’t place one.</h2>
-            <p className='hero-horizontal-right max-w-md max-sm:text-center md:text-left text-center xl:max-w-2xl lg:max-w-xl md:max-w-md text-xl dark:text-gray-50'>We’re here to <span className='text-word-purple'>help you</span> make the right decision that’s best for you.</p>
-            <div className='hero-horizontal-right flex sm:flex-row flex-col gap-2 sm:gap-8'>
-                <CustomButton 
-                  size="lg" 
-                  onPress={handleWhatsAppPress}
-
-                  className=" rounded-2xl bg-black text-[#F3EEF3] font-semibold"
-                >
-                  Get your treatment plan now !
-                </CustomButton>
+        <div className='flex items-center justify-center flex-row gap-7 max-lg:flex-col xl:max-w-6xl max-[500px]:mx-1 mx-10 mt-20'>
+          <div className=' flex items-center justify-center'>
+            <div class="flip-card max-[320px]:w-48 max-[320px]:h-60 ">
+                <div class="flip-card-inner max-[320px]:w-48 max-[320px]:h-60">
+                    <div class="flip-card-front max-[320px]:w-48 max-[320px]:h-60">
+                      <Image
+                        src="/purple2.jpg"
+                        alt='White and Black Simple Illustration Dental Clinic Logo'
+                        width={500}
+                        height={700}
+                        quality={90}
+                        priority
+                        className='hero-horizontal-left rounded-xl object-cover shadow-xl pointer-events-none'
+                      />
+                    </div>
+                    <div class="flip-card-back">
+                    <Image
+                        src="/purple.jpg"
+                        alt='White and Black Simple Illustration Dental Clinic Logo'
+                        width={400}
+                        height={700}
+                        quality={90}
+                        priority
+                        className='hero-horizontal-left rounded-xl object-cover shadow-xl pointer-events-none'
+                      />
+                    </div>
+                </div>
             </div>
+          </div>
+          <div className='flex flex-col items-start max-lg:items-center justify-center max-md:items-center gap-6 mb-4 '>
+            <h1 className='hero-vertical text-center text-2xl min-[300px]:text-3xl sm:text-5xl lg:text-5xl font-extrabold lg:text-left capitalize text-bold-purple'>Why You Should Choose Dental Implants over other Solutions !?</h1>
+            <h2 className='hero-vertical text-center min-[300px]:text-3xl sm:text-4xl lg:text-4xl font-bold md:text-left capitalize '>
+              Yes, we all know that implants are <br />
+              <span className=' text-word-purple text-3xl'>Strong</span> • <span className=' text-word-purple text-3xl'>Long-lasting</span > • <span className=' text-word-purple text-3xl'>Natural-looking</span>
+            </h2>
+            <h3 className='hero-horizontal-right text-4xl font-semibold'>
+              But ...
+            </h3>
+            
           </div>
         </div>
       </motion.div>

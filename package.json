@@ -73,7 +73,7 @@
     "react-calendar": "^5.0.0",
     "react-datepicker": "^7.3.0",
     "react-dom": "^18.3.1",
-    "react-email": "2.1.5",
+    "react-email": "^1.10.1",
     "react-hook-form": "^7.51.4",
     "react-hot-toast": "^2.4.1",
     "react-i18next": "^14.1.2",
