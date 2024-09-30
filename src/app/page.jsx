@@ -47,6 +47,11 @@ export default function Lb() {
             Be aware !!
           </h3>
           <Arabic />
+          <div class="container reveal-horizontal-right">
+                <div class="field">
+                    <div class="mouse"></div>
+                </div>
+            </div>
           {/* Attach the ref to InfiniteScroll */}
             <InfiniteScroll ref={infiniteScrollRef}/>
         </div>

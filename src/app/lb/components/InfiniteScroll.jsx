@@ -57,14 +57,14 @@ import { CiInstagram } from "react-icons/ci";
         // };
     return (
         <>
-        <div className='relative mx-auto flex gap-4 flex-col text-center place-content-center xl:max-w-[1200px] max-[500px]:px-2 py-28'>
+        <div className='relative mx-auto flex gap-10 flex-col text-center place-content-center xl:max-w-[1200px] max-[500px]:px-2 py-28'>
             <div className=' flex flex-col gap-3 text-4xl font-bold capitalize  max-[400px]:text-3xl max-xs:text-xl'>
                 <h1 >If you Want a Guaranteed Treatment Take your first step towards a successful one !</h1>
                 <br />
                 <h1 >By choosing the right <span className=' text-word-purple'>operator</span> who may do for you the right <span className=' text-word-purple'>Treatment Planing.</span></h1>
             </div>
 
-            <div className='flex flex-row-reverse max-[360px]:flex-col-reverse justify-center gap-10 max-[360px]:gap-5 items-center mb-20'>
+            <div className='flex flex-row-reverse max-[360px]:flex-col-reverse justify-center gap-10 max-[360px]:gap-5 items-center my-16'>
                     <div className='flex flex-row items-end gap-1'>
                             <button
                                 className='btn  p-6 text-xl max-[400px]:text-sm rounded-full w-fit cursor-pointer'
@@ -131,7 +131,7 @@ import { CiInstagram } from "react-icons/ci";
             </div>
 
             <div className='flex justify-center flex-col gap-5 px-5 mx-auto'>
-                <h1 className='self-center text-5xl xl:text-left max-sm:text-3xl sm:text-5xl text-center font-bold underline text-word-purple pt-20 pb-5'>L.B STOMATOLOGY</h1>
+                <h1 className='self-center text-5xl xl:text-left max-sm:text-3xl sm:text-5xl text-center font-bold underline text-word-purple pt-10 pb-5'>L.B STOMATOLOGY</h1>
                 <h2 className=' text-start min-[300px]:text-3xl sm:text-4xl lg:text-4xl font-bold md:text-left capitalize '>Provides you all dental services such as : </h2>
                 <div>
                     <ul className='flex flex-col  gap-2 pl-5'>
@@ -334,10 +334,10 @@ import { CiInstagram } from "react-icons/ci";
                             <FaTelegram className="text-2xl" />: @LBSTOMA01
                             </span>
                             <a
-                            href="mailto:lbstomatologia1@gmail.com"
+                            href="mailto:lb.stomatology@list.ru"
                             className="hover:text-word-purple flex flex-row items-center gap-1"
                             >
-                            <MdEmail className="text-2xl" /> : lbstomatologia1@gmail.com
+                            <MdEmail className="text-2xl" /> : lb.stomatology@list.ru
                             </a>
                         </ModalBody>
                         <ModalFooter>
