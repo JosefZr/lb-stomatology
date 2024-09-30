@@ -58,7 +58,7 @@ import { useLbNavbarLinks } from '@/app/lib/data.js';
             </div>
                 <div className='flex flex-col gap-5'>
                 <div className=' font-bold text-5xl max-[450px]:text-2xl pb-10'>•Exclusive for Dental students•</div>
-                <div className=' flex flex-col gap-3 text-4xl font-bold capitalize  max-[400px]:text-3xl max-xs:text-xl mx-3'>
+                <div className=' flex flex-col gap-3 max-[450px]:gap-0 text-4xl max-[450px]:text-lg font-bold capitalize   mx-1'>
                     <h1 >Dental schools teach you how to become a <span className=' text-word-purple'>dentist</span>, not how to become a <span className=' text-word-purple'>successful</span> one .
                     </h1>
                     <br />
@@ -67,44 +67,7 @@ import { useLbNavbarLinks } from '@/app/lib/data.js';
                     <h1>Then commit to life long Learning . .</h1> 
                 </div>
                 <div className='flex flex-row max-[360px]:flex-col-reverse justify-center gap-10 max-[360px]:gap-5 items-center mb-10'>
-                    <div className='flex flex-row items-end gap-1'>
-                        <div className=' flex flex-row'>
-                            <span
-                                className='text-2xl text-word-purple cursor-pointer underline'
-                                onClick={onInfoOpen}
-                            >
-                                Read More
-                            </span>
-                            <span className='text-word-purple text-3xl'>..</span>
-                        </div>
-                    </div>
-                    <Modal isOpen={isInfoOpen} onOpenChange={onInfoOpenChange}>
-                        <ModalContent>
-                            {(onClose) => (
-                                <>
-                                    <ModalHeader className="flex flex-col gap-1"></ModalHeader>
-                                    <ModalBody>
-                                        <Image
-                                            src={imageSrc}
-                                            width={400}
-                                            height={600}
-                                            alt='invitation for dental students'
-                                            quality={90}
-                                            className=' pointer-events-none'
-                                        />
-                                    </ModalBody>
-                                    <ModalFooter>
-                                        <Button color="danger" variant="shadow" onPress={onClose}>
-                                            Close
-                                        </Button>
-                                        <Button variant='shadow' className="bg-light-purple text-white" onPress={handleImageChange}>
-                                            Show {languageButton} Version
-                                        </Button>
-                                    </ModalFooter>
-                                </>
-                            )}
-                        </ModalContent>
-                    </Modal>
+                    
                     <div >
                         <button className='btn  p-6 text-xl max-[400px]:text-sm rounded-full w-fit cursor-pointer' onClick={onVideoOpen}> {<FaPlay />}
                         </button>
@@ -142,21 +105,14 @@ import { useLbNavbarLinks } from '@/app/lib/data.js';
                         Join ЛБ-STOMATOLOGY
                         </button>
                     </div>
-                    <div className=' font-bold text-5xl max-[450px]:text-2xl mt-20'>•Connect with each other •                    </div>
-                    <div className=' flex flex-col gap-3 text-4xl font-bold capitalize  max-[400px]:text-3xl max-xs:text-xl mx-3'>
-                        <h1 >IF YOU’RE INTERESTED IN <span className=' text-word-purple'>UNLOCKING THE SECRETS</span> BEHIND THE WORLD’S DENTAL UNIVERSITIES… 
-                        </h1>
-                        <br />
-                        <h1 >Want to be a High-Value Dentist !? 
-                        Then commit to life long Learning . . </h1>
-                    </div>
-                    
-                    <button className='btn capitalize text-xl max-sm:text-sm'   
+                    <div  className=' font-bold text-5xl max-[450px]:text-2xl mt-20'>•Connect with each other •</div>
+                    <button className='btn capitalize text-xl max-sm:text-sm my-8'   
                         onClick={() => window.open('https://t.me/LBSTOMATOLOGYchat', '_blank')}>
                             Join ЛБ’s Generations 
                         </button>
-                    
-                    
+                    <div className=' flex flex-col gap-3 max-[450px]:gap-0 text-4xl max-[450px]:text-lg font-bold capitalize   mx-1'>
+                        <h1>IF YOU’RE INTERESTED IN <span className=' text-word-purple'>UNLOCKING THE SECRETS</span> BEHIND THE WORLD’S DENTAL UNIVERSITIES…</h1>
+                    </div>
                 </div>
             </div>
         </div>
