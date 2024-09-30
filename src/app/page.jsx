@@ -1,20 +1,22 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { AnimatePresence } from "framer-motion";
 import HeroLb from "./lb/components/HeroLb";
 import LbNavbar from "./lb/components/LbNavbar";
 import LbLoader from "./lb/components/LbLoader";
-// import Features from "./lb/components/Features";
 import Convincing from "./lb/components/Convincing";
 import InfiniteScroll from "./lb/components/InfiniteScroll";
-import HorizontalScroll from "./lb/components/HorizontalScroll";
-import Visitors from "./lb/components/Visitors"
 import Arabic from "./components/Arabic";
-import Form from "./lb/components/Form";
-// import { Tooltip } from "@nextui-org/react";
 
 export default function Lb() {
   const [loading, setLoading] = useState(true);
+  const infiniteScrollRef = useRef(null);
+  const scrollToInfo = () => {
+    if (infiniteScrollRef.current) {
+      infiniteScrollRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+  // Create a ref for the InfiniteScroll section
 
   useEffect(() => {
     if (loading) {
@@ -23,6 +25,7 @@ export default function Lb() {
       document.querySelector('body').classList.remove('loading');
     }
   }, [loading]);
+
   return (
     <AnimatePresence>
       {loading ? (
@@ -36,23 +39,16 @@ export default function Lb() {
       ) : (
         <div className="relative min-h-screen overflow-hidden bg-[#F3EEF3]">
           {/* Background elements */}
-
-          <LbNavbar />
+          {/* Pass the ref to LbNavbar */}
+          <LbNavbar onScrollToInfo={scrollToInfo} />
           <HeroLb />
-          {/* <Visitors/> */}
           <Convincing />
           <h3 className='pb-8 text-5xl xl:text-left max-sm:text-3xl sm:text-5xl text-center font-bold mx-auto w-fit'>
             Be aware !!
-            </h3>
-          <Arabic/>
-            <div class="container reveal-horizontal-right">
-                <div class="field">
-                    <div class="mouse"></div>
-                </div>
-            </div>
-          <InfiniteScroll />
-          {/* <Form/> */}
-          {/* <HorizontalScroll /> */}
+          </h3>
+          <Arabic />
+          {/* Attach the ref to InfiniteScroll */}
+            <InfiniteScroll ref={infiniteScrollRef}/>
         </div>
       )}
     </AnimatePresence>

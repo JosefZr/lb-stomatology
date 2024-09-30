@@ -1,74 +1,35 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import {
-  Modal,
-  Button,
-  ModalBody,
-  ModalContent,
-  ModalFooter,
-  ModalHeader,
-  Navbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
-  NavbarMenu,
-  NavbarMenuItem,
-  NavbarMenuToggle,
-  useDisclosure,
-  Image
-} from "@nextui-org/react";
+import {Modal,Button,ModalBody,ModalContent,ModalFooter,ModalHeader,Navbar,NavbarBrand,NavbarContent,NavbarItem,NavbarMenu,NavbarMenuItem,NavbarMenuToggle,useDisclosure,Image} from "@nextui-org/react";
 import { AnimatePresence, motion } from "framer-motion";
 import styled from "styled-components";
 import CustomButton from "@/app/components/Button.jsx";
-import { useLbNavbarLinks } from "@/app/lib/data";
-import { FaTelegram } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
-import { IoLogoWhatsapp } from "react-icons/io";
 import CustomNavItem from "./CustomNavItem";
 import { Ri24HoursLine } from "react-icons/ri";
+import { GiGraduateCap } from "react-icons/gi";
+import { LiaUniversitySolid } from "react-icons/lia";
 import Link from "next/link";
-
 const NavItem = styled.div`
   perspective: 120px;
   perspective-origin: bottom;
 `;
 
-function LbNavbar() {
-  const links = useLbNavbarLinks();
+function LbNavbar({ onScrollToInfo  }) {
   const [applyTransform, setApplyTransform] = useState(false);
   const [applyButton, setApplyButton] = useState(false);
-  const {
-    isOpen: isContactOpen,
-    onOpen: onContactOpen,
-    onOpenChange: onContactOpenChange
-  } = useDisclosure();
+
   const {
     isOpen: isPricesOpen,
     onOpen: onPricesOpen,
     onOpenChange: onPricesOpenChange
-  } = useDisclosure();
-  const {
-    isOpen: isLocationOpen,
-    onOpen: onLocationOpen,
-    onOpenChange: onLocationOpenChange
   } = useDisclosure();
 
   const [imageSrc, setImageSrc] = useState('/lb/p2.jpg');
   const [languageButton, setLanguageButton] = useState('AR');
 
   const handleImageChange = () => {
-      setImageSrc(prevSrc => prevSrc === '/lb/p2.jpg' ? '/lb/p1.jpg' : '/lb/p2.jpg');
-      setLanguageButton(prevLng => prevLng ==="AR"? "EN":"AR")
-  };
-
-  const handleLanguageToggle = () => {
-    if (language === "EN") {
-      setLanguage("AR");
-      setLanguageButton("EN");
-    } else {
-      setLanguage("EN");
-      setLanguageButton("AR");
-    }
+    setImageSrc(prevSrc => prevSrc === '/lb/p2.jpg' ? '/lb/p1.jpg' : '/lb/p2.jpg');
+    setLanguageButton(prevLng => prevLng ==="AR"? "EN":"AR")
   };
 
   useEffect(() => {
@@ -87,94 +48,14 @@ function LbNavbar() {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  // const handleInfosClick = () => {
+  //   if (infiniteScrollRef && infiniteScrollRef.current) {
+  //     infiniteScrollRef.current.scrollIntoView({ behavior: "smooth" });
+  //   }
+  // };
+
   return (
     <>
-      <Modal
-        size="lg"
-        isOpen={isContactOpen}
-        onOpenChange={onContactOpenChange}
-        isDismissable={true}
-        isKeyboardDismissDisabled={true}
-      >
-        <ModalContent>
-          {(onClose) => (
-            <>
-              <ModalHeader className=" flex items-center justify-center">
-                <h1 className=" text-3xl text-word-purple">َسلامة جسمك تبدأ من فَمك</h1>
-              </ModalHeader>
-              <ModalBody className="text-end">
-                <p>
-                عيادة بن يحي تُقدم لك عدد كبير من الحلول العلاجية
-                </p>
-                <div className=" flex flex-row-reverse items-center justify-start gap-1">
-                <p>( و تقدم لك ايضاً استشارة مجانية ) </p>
-                <p> في مجال زراعة الاسنان </p>
-                </div>
-                <p className=" text-word-purple">
-                ❗و خصم  ٪٥اذا تواصلت معنا اليوم 
-                </p>
-              </ModalBody>
-              <ModalBody>
-                <span
-                  className="cursor-pointer hover:text-word-purple flex flex-row items-center gap-1"
-                  onClick={() => window.open("https://wa.me/79872346805", "_blank")}
-                >
-                  <IoLogoWhatsapp className="text-2xl" /> : +7 (987) 234 68 05
-                </span>
-                <span
-                  className="cursor-pointer hover:text-word-purple flex flex-row items-center gap-1"
-                  onClick={() => window.open("https://t.me/LBSTOMA01", "_blank")}
-                >
-                  <FaTelegram className="text-2xl" />: @LBSTOMA01
-                </span>
-                <a
-                  href="mailto:lbstomatologia1@gmail.com"
-                  className="hover:text-word-purple flex flex-row items-center gap-1"
-                >
-                  <MdEmail className="text-2xl" /> : lbstomatologia1@gmail.com
-                </a>
-              </ModalBody>
-              <ModalFooter>
-                <Button color="danger" variant="light" onPress={onClose}>
-                  Close
-                </Button>
-              </ModalFooter>
-            </>
-          )}
-        </ModalContent>
-      </Modal>
-      <Modal
-        size="lg"
-        isOpen={isLocationOpen}
-        onOpenChange={onLocationOpenChange}
-        isDismissable={true}
-        isKeyboardDismissDisabled={true}
-      >
-        <ModalContent>
-          {(onClose) => (
-            <>
-              <ModalHeader className=" flex items-center justify-center">
-                <h1 className=" text-3xl text-word-purple">Locations</h1>
-              </ModalHeader>
-              <ModalBody className=" max-sm:flex-col gap-5">
-                <div>
-                  <p>• Bordj Bou Arreridj *2</p>
-                  <p>• ⁠Soon we will be available in   Algiers .</p>
-                  <br />
-                  <p>Ps: Our Prices will be the Same anywhere ! </p>
-                  <br /> <br />
-                  <p className=" text-word-purple">ЛБ-STOMATOLOGY is built on solid principles.</p>
-                </div>
-              </ModalBody>
-              <ModalFooter>
-                <Button color="danger" variant="light" onPress={onClose}>
-                  Close
-                </Button>
-              </ModalFooter>
-            </>
-          )}
-        </ModalContent>
-      </Modal>
       <Modal
         size="lg"
         isOpen={isPricesOpen}
@@ -183,28 +64,28 @@ function LbNavbar() {
         isKeyboardDismissDisabled={true}
       >
         <ModalContent>
-        {(onClose) => (
-          <>
+          {(onClose) => (
+            <>
               <ModalHeader className="flex flex-col gap-1"></ModalHeader>
-              <ModalBody  className=" flex justify-center items-center">
-                  <Image
-                      src={imageSrc}
-                      width={400}
-                      height={600}
-                      alt='invitation for dental students'
-                      quality={90}
-                      className=' pointer-events-none'
-                  />
+              <ModalBody className=" flex justify-center items-center">
+                <Image
+                  src={imageSrc}
+                  width={400}
+                  height={600}
+                  alt="invitation for dental students"
+                  quality={90}
+                  className=" pointer-events-none"
+                />
               </ModalBody>
               <ModalFooter>
-                  <Button color="danger" variant="shadow" onPress={onClose}>
-                      Close
-                  </Button>
-                  <Button variant='shadow' className="bg-light-purple text-white" onPress={handleImageChange}>
-                      {languageButton} Version
-                  </Button>
+                <Button color="danger" variant="shadow" onPress={onClose}>
+                  Close
+                </Button>
+                <Button variant='shadow' className="bg-light-purple text-white" onPress={handleImageChange}>
+                  {languageButton} Version
+                </Button>
               </ModalFooter>
-          </>
+            </>
           )}
         </ModalContent>
       </Modal>
@@ -218,6 +99,10 @@ function LbNavbar() {
             />
           </AnimatePresence>
         </NavbarContent>
+        <NavbarContent justify="center" className=" flex flex-row items-center gap-5">
+          <Link  passHref href={"/Students"}>
+            <GiGraduateCap className=" w-10 h-auto cursor-pointer"/>
+          </Link>
         <motion.div className="flex justify-center items-center font-extrabold text-md">
           <NavbarBrand className="flex flex-row justify-center items-center font-extrabold text-md">
             <motion.div>
@@ -236,6 +121,10 @@ function LbNavbar() {
             </motion.div>
           </NavbarBrand>
         </motion.div>
+          <LiaUniversitySolid className=" w-10 h-auto cursor-pointer"/>
+        </NavbarContent>
+      
+
         <NavbarContent justify="end">
           <NavbarItem>
             <CustomButton
@@ -249,23 +138,17 @@ function LbNavbar() {
             </CustomButton>
           </NavbarItem>
         </NavbarContent>
-        <NavbarMenu className="flex flex-col gap-10 cursor-pointer justify-center items-center overflow-hidden pt-10 pl-10 bg-transparent ">
-        {links.map((link, i) => (
-          <NavItem key={i}>
-            {/* <motion.div
-              variants={prespective(i)}
-              animate="enter"
-              initial="initial"
-              exit="exit"
-            > */}
-      <NavbarMenuItem>
-        {link.name === "ЛБ’s SPECIAL PRICES" ? (
-          <CustomNavItem onClick={onPricesOpen} name={link.name}/>
-        ) : ("")}
-      </NavbarMenuItem>
-    {/* </motion.div> */}
-  </NavItem>
-))}
+        <NavbarMenu className="flex flex-col gap-10 cursor-pointer justify-center items-center overflow-hidden pt-10 pl-10  ">
+          <NavItem>
+            <NavbarMenuItem>
+              <CustomNavItem onClick={onPricesOpen} name="ЛБ’s SPECIAL PRICES" />
+            </NavbarMenuItem>
+          </NavItem>
+          <NavItem>
+            <NavbarMenuItem>
+              <CustomNavItem name="Infos" onClick={onScrollToInfo} />
+            </NavbarMenuItem>
+          </NavItem>
         </NavbarMenu>
       </Navbar>
     </>

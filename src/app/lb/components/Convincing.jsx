@@ -24,7 +24,7 @@ function Convincing() {
         >
             <section className='bg-transparent flex xl:flex-row-reverse flex-col justify-evenly gap-5 max-sm:mx-0 mx-auto md:px-10 md:py-10 pb-10 max-sm:px-5 max-[400px]:px-2 items-start max-xl:items-center rounded-xl'>
                 <div className='flex items-center flex-col gap-10 max-[375px]:gap-5'>
-                    <h1 className=' xl:hidden capitalize font-bold sm:text-7xl text-5xl whitespace-normal max-[400px]:text-3xl'>
+                    <h1 className=' xl:hidden capitalize font-bold sm:text-5xl text-5xl whitespace-normal max-[400px]:text-3xl'>
                         Dental implants are not only an <span className='text-word-purple'>Aesthetic</span> Procedure But also a <span className='text-word-purple'>Healthy</span> One
                     </h1>
                     <div class="flip-card max-sm:h-72 max-sm:w-[400px] sm:w-[500px] max-[375px]:w-64 max-[375px]:h-48 ">

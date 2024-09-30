@@ -517,7 +517,7 @@ body {
 .container {
   position: absolute;
   right: 0%;
-  bottom:52% ;
+  bottom:45% ;
 	width: fit-content;
 	height: fit-content;
 	display: flex;
@@ -659,4 +659,11 @@ body {
 	60% {
 		height: 40px;
 	}
+}
+
+
+/* backgroud of the navbar */
+
+.filtering{
+  opacity: 0.5; filter: brightness(50%) saturate(50%);
 }

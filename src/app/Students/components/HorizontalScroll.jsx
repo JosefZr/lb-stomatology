@@ -1,5 +1,6 @@
+"use client"
 import React from 'react';
-import './hor.css';
+import "../../../app/lb/components/hor.css"
 import Link from 'next/link';
 
 export default function HorizontalScroll() {
