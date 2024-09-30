@@ -11,6 +11,7 @@ import HorizontalScroll from "./lb/components/HorizontalScroll";
 import Visitors from "./lb/components/Visitors"
 import Arabic from "./components/Arabic";
 import Form from "./lb/components/Form";
+// import { Tooltip } from "@nextui-org/react";
 
 export default function Lb() {
   const [loading, setLoading] = useState(true);
@@ -38,10 +39,18 @@ export default function Lb() {
 
           <LbNavbar />
           <HeroLb />
-          <Visitors/>
+          {/* <Visitors/> */}
           <Convincing />
+          <h3 className='pb-8 text-5xl xl:text-left max-sm:text-3xl sm:text-5xl text-center font-bold mx-auto w-fit'>
+            Be aware !!
+            </h3>
           <Arabic/>
-          {/* <InfiniteScroll /> */}
+            <div class="container reveal-horizontal-right">
+                <div class="field">
+                    <div class="mouse"></div>
+                </div>
+            </div>
+          <InfiniteScroll />
           {/* <Form/> */}
           {/* <HorizontalScroll /> */}
         </div>

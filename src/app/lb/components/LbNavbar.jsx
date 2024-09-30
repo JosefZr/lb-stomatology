@@ -249,46 +249,19 @@ function LbNavbar() {
             </CustomButton>
           </NavbarItem>
         </NavbarContent>
-        <NavbarMenu className="flex flex-col gap-10 cursor-pointer justify-start items-center overflow-hidden pt-10 pl-10 bg-white">
-{links.map((link, i) => (
-  <NavItem key={i}>
-    {/* <motion.div
-      variants={prespective(i)}
-      animate="enter"
-      initial="initial"
-      exit="exit"
-    > */}
+        <NavbarMenu className="flex flex-col gap-10 cursor-pointer justify-center items-center overflow-hidden pt-10 pl-10 bg-transparent ">
+        {links.map((link, i) => (
+          <NavItem key={i}>
+            {/* <motion.div
+              variants={prespective(i)}
+              animate="enter"
+              initial="initial"
+              exit="exit"
+            > */}
       <NavbarMenuItem>
         {link.name === "ЛБ’s SPECIAL PRICES" ? (
           <CustomNavItem onClick={onPricesOpen} name={link.name}/>
-        ) : link.name === "Contact me Now !" ? (
-          <CustomNavItem onClick={onContactOpen} name={link.name}/>
-        ) : link.name === "BENYAHIA Family" ? (
-          <Link 
-            href={"/BENYAHIA-Family"}
-            className="text-[46px] max-[540px]:text-[32px] font-semibold hover:text-word-purple"
-            passHref
-          >
-            {link.name}
-          </Link>
-        ) : link.name === "Locations 📍" ? (
-          <div
-            onClick={onLocationOpen}
-            className="text-[46px] max-[540px]:text-[32px] font-semibold hover:text-word-purple"
-            passHref
-          >
-            {link.name}
-          </div>
-        ) : (
-          // Correctly rendering the image in this case
-          <Image
-            src="/purple.jpg"
-            alt="office"
-            width={300}
-            height={400}
-            className="rounded-md"
-          />
-        )}
+        ) : ("")}
       </NavbarMenuItem>
     {/* </motion.div> */}
   </NavItem>
