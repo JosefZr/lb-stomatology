@@ -121,7 +121,9 @@ function LbNavbar({ onScrollToInfo  }) {
             </motion.div>
           </NavbarBrand>
         </motion.div>
+        <Link  passHref href={"/New-Generations"}>
           <LiaUniversitySolid className=" w-10 h-auto cursor-pointer"/>
+        </Link>
         </NavbarContent>
       
 

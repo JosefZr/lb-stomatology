@@ -95,3 +95,120 @@
            0 0 2.5em 2em var(--glow-spread-color),
            inset 0 0 .5em .25em var(--glow-color);
    }
+
+   /*start css contact us*/
+.contact-form-wrapper {
+  padding: 0 2rem;
+  margin: auto;
+}
+.contact-form textarea {
+  resize: none;
+} 
+.contact-form .form-input,
+.form-text-area {
+  background-color: #f0f4f5;
+  height: 50px;
+  padding-left: 16px;
+  width: 100%;
+  max-width: 600px;
+}
+.contact-form .form-text-area {
+  background-color: #f0f4f5;
+  height: auto;
+  padding-left: 16px;
+}
+.contact-form .form-control::placeholder {
+  color: #aeb4b9;
+  font-weight: 500;
+  opacity: 1;
+}
+.contact-form .form-control:-ms-input-placeholder {
+  color: #aeb4b9;
+  font-weight: 500;
+}
+.contact-form .form-control::-ms-input-placeholder {
+  color: #aeb4b9;
+  font-weight: 500;
+}
+.contact-form .form-control:focus {
+  border-color: #f33fb0;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.07), 0 0 8px #f33fb0;
+}
+.contact-form .title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+.contact-form .description {
+  color: black;
+  font-size: 1.4rem;
+  text-align: center;
+}
+.contact-form .description span{
+  color: black;
+  font-size: 1.4rem;
+  text-align: center;
+  font-weight: 600;
+}
+.contact-form .submit-button-wrapper {
+  text-align: center;
+}
+.contact-form .submit-button-wrapper input {
+  padding: 9px 60px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/*end css contact us*/
+
+/* Loader styles */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed; /* Make the loader fixed */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full width */
+  height: 100vh; /* Full height */
+  background-color: #fff; /* Background color during loading */
+  opacity: 1; /* Fully visible initially */
+  transition: opacity 1s ease-out; /* Smooth fade-out */
+  z-index: 9999; /* Ensure loader is above other content */
+}
+
+.loading.fade-out {
+  opacity: 0; /* Trigger fade-out effect */
+  pointer-events: none; /* Prevent interaction when faded out */
+}
+
+.loading svg polyline {
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.loading svg polyline#back {
+  fill: none;
+  stroke: #ff4d5033;
+}
+
+.loading svg polyline#front {
+  fill: none;
+  stroke: #ff4d4f;
+  stroke-dasharray: 48, 144;
+  stroke-dashoffset: 192;
+  animation: dash_682 1.4s linear infinite;
+}
+
+@keyframes dash_682 {
+  72.5% {
+    opacity: 0;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
