@@ -35,7 +35,7 @@ export default function NewGenerations() {
 
           <section id="contact-me">
             <div className="contact-form-wrapper " style={{ marginBottom: 100 }}>
-              <form action="https://formspree.io/f/mblrnqqr" method="post" className="contact-form">
+              <form action="https://formspree.io/f/xgvwgqae" method="post" className="contact-form">
                 <div>
                   <input
                     type="text"
