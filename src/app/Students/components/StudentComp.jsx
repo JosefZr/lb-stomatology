@@ -14,7 +14,7 @@ import { useLbNavbarLinks } from '@/app/lib/data.js';
   const links = useLbNavbarLinks();
 
     const {isOpen: isInfoOpen, onOpen: onInfoOpen, onOpenChange: onInfoOpenChange} = useDisclosure();
-    const {isOpen: isVideoOpen, onOpen: onVideoOpen, onOpenChange: onVideoOpenChange} = useDisclosure();
+    // const {isOpen: isVideoOpen, onOpen: onVideoOpen, onOpenChange: onVideoOpenChange} = useDisclosure();
 
     const [imageSrc, setImageSrc] = useState('/lb/invitation.webp');
     const [languageButton, setLanguageButton] = useState('french');
@@ -66,7 +66,7 @@ import { useLbNavbarLinks } from '@/app/lib/data.js';
                     <br />
                     <h1>Then commit to life long Learning . .</h1> 
                 </div>
-                <div className='flex flex-row max-[360px]:flex-col-reverse justify-center gap-10 max-[360px]:gap-5 items-center mb-10'>
+                {/* <div className='flex flex-row max-[360px]:flex-col-reverse justify-center gap-10 max-[360px]:gap-5 items-center mb-10'>
                     
                     <div >
                         <button className='btn  p-6 text-xl max-[400px]:text-sm rounded-full w-fit cursor-pointer' onClick={onVideoOpen}> {<FaPlay />}
@@ -96,7 +96,7 @@ import { useLbNavbarLinks } from '@/app/lib/data.js';
                             )}
                         </ModalContent>
                     </Modal>
-                </div>
+                </div> */}
                 <div className='flex flex-col justify-between gap-5 items-center'>
                 
                     <div>
@@ -123,6 +123,33 @@ import { useLbNavbarLinks } from '@/app/lib/data.js';
                         >
                             Read More
                         </span>
+                        <Modal isOpen={isInfoOpen} onOpenChange={onInfoOpenChange}>
+                        <ModalContent>
+                            {(onClose) => (
+                                <>
+                                    <ModalHeader className="flex flex-col gap-1"></ModalHeader>
+                                    <ModalBody>
+                                        <Image
+                                            src={imageSrc}
+                                            width={400}
+                                            height={600}
+                                            alt='invitation for dental students'
+                                            quality={90}
+                                            className=' pointer-events-none'
+                                        />
+                                    </ModalBody>
+                                    <ModalFooter>
+                                        <Button color="danger" variant="shadow" onPress={onClose}>
+                                            Close
+                                        </Button>
+                                        <Button variant='shadow' className="bg-light-purple text-white" onPress={handleImageChange}>
+                                            Show {languageButton} Version
+                                        </Button>
+                                    </ModalFooter>
+                                </>
+                            )}
+                        </ModalContent>
+                    </Modal>
                         <span className='text-word-purple text-3xl'>..</span>
                     </div>
         </>
